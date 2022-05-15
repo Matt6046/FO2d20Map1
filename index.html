@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html = style="height: 100%;">
+  <head>
+    <title>DnD World Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scripts/leaflet.css">
+    <script src="scripts/leaflet.js"></script>
+  </head>
+  
+  <body style="height: 100%;margin: 0;">
+    <div id="map" style="width: 100%; height: 100%; background: #FFFFFF;"></div>
+    <script type="text/javascript">
+  //Creating the Map
+    var map = L.map('map').setView([0, 0], 0);
+    L.tileLayer('map/{z}/{x}/{y}.png', {
+      continuousWorld: false,
+      noWrap: true,  
+      minZoom: 2,
+      maxZoom: 4,
+    }).addTo(map);
+  //Coordinate Finder
+    var marker = L.marker([0, 0], {
+      draggable: true,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+  //Markers
+  var id_dillprim = L.marker([-78.508103, 130.165986]).bindPopup('Dillon Primary').addTo(map)
+  var id_dillprim = L.marker([-78.508103, 130.165986]).bindPopup('Dillon Primary').addTo(map);
+  var id_dillout = L.marker([-75.995173, 134.736335]).bindPopup('Dillon Outskirts').addTo(map);
+  var id_polaris = L.marker([-57.899813, -3.512015]).bindPopup('Polaris').addTo(map);
+  var id_jackson = L.marker([-59.129405, -80.332178]).bindPopup('Jackson').addTo(map);
+  var id_wisdom = L.marker([19.642906, -90.703111]).bindPopup('Wisdom').addTo(map);
+  var id_wriver = L.marker([66.336793, 41.395991]).bindPopup('Wise River').addTo(map);
+  var id_melrose = L.marker([24.990389, 114.78511]).bindPopup('Melrose').addTo(map);
+  var id_glen = L.marker([-31.726635, 113.115232]).bindPopup('Glen').addTo(map);
+  var id_coolidge = L.marker([-28.226201, 21.444918]).bindPopup('Coolidge').addTo(map);
+  var id_argenta = L.marker([-73.176272, 73.300676]).bindPopup('Argenta').addTo(map);
+  var id_ncrborder = L.marker([25.144796, -118.65177]).bindPopup('NCR Border Outpost').addTo(map);
+  var id_ncroutpost = L.marker([-20.639737, -93.867261]).bindPopup('NCR Outpost').addTo(map);
+  var id_vaultthirtythree = L.marker([3.600777, 90.527321]).bindPopup('Vault 33').addTo(map);
+  var id_waukenalake = L.marker([-3.16032, 42.188761]).bindPopup('Waukena Lake').addTo(map);
+  var id_troylookout = L.marker([-31.354262, -36.562656]).bindPopup("Troy's Lookout").addTo(map);
+  var id_marshbunker = L.marker([-28.15119, -27.422269]).bindPopup('Marsh Bunker').addTo(map);
+  var id_legionroadblock = L.marker([-72.599632, -2.988919]).bindPopup('Legion Roadblock').addTo(map);
+  var id_serrataairstrip = L.marker([61.185801, 31.289081]).bindPopup('Serrata Airstrip').addTo(map);
+  var id_proposalrock = L.marker([24.22234, -62.751452]).bindPopup('Proposal Rock').addTo(map);
+  var id_roadsideraidercamp = L.marker([70.988175, -48.779345]).bindPopup('Roadside Raider Camp').addTo(map);
+    </script>
+  </body>
+</html>
