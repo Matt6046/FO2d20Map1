@@ -18,14 +18,6 @@
       minZoom: 0,
       maxZoom: 4,
     }).addTo(map);
-  //Coordinate Finder
-    var marker = L.marker([10, 0], {
-      draggable: true,
-    }).addTo(map);
-    marker.bindPopup('LatLng Marker').openPopup();
-    marker.on('dragend', function(e) {
-      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
-    });
   //Marker Colours
   var Blue = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
