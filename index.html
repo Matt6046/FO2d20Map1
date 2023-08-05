@@ -18,63 +18,139 @@
       minZoom: 0,
       maxZoom: 4,
     }).addTo(map);
+  //Coordinate Finder
+    var marker = L.marker([10, 0], {
+      draggable: true,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+  //Marker Colours
+  var Blue = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  var Orange = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  var Black = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  var Green = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  var Red = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  var Purple = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  var Gold = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  var Grey = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
   //Markers
-  var id_dillprim = L.marker([-78.508103, 130.165986]).bindPopup('Dillon Primary').addTo(map);
-  //var id_dillout = L.marker([-75.995173, 134.736335]).bindPopup('Dillon Outskirts').addTo(map);
-  //var id_polaris = L.marker([-57.899813, -3.512015]).bindPopup('Polaris').addTo(map);
-  //var id_jackson = L.marker([-59.129405, -80.332178]).bindPopup('Jackson').addTo(map);
-  var id_wisdom = L.marker([19.642906, -90.703111]).bindPopup('Wisdom').addTo(map);
-  //var id_wriver = L.marker([66.336793, 41.395991]).bindPopup('Wise River').addTo(map);
-  //var id_melrose = L.marker([24.990389, 114.78511]).bindPopup('Melrose').addTo(map);
-  //var id_glen = L.marker([-31.726635, 113.115232]).bindPopup('Glen').addTo(map);
-  //var id_coolidge = L.marker([-28.226201, 21.444918]).bindPopup('Coolidge').addTo(map);
-  //var id_argenta = L.marker([-73.176272, 73.300676]).bindPopup('Argenta').addTo(map);
-  var id_ncrborder = L.marker([25.144796, -118.65177]).bindPopup('NCR Border Outpost').addTo(map);
-  //var id_ncroutpost = L.marker([-20.639737, -93.867261]).bindPopup('NCR Outpost').addTo(map);
-  //var id_vaultthirtythree = L.marker([3.600777, 90.527321]).bindPopup('Vault 33').addTo(map);
-  //var id_waukenalake = L.marker([-3.16032, 42.188761]).bindPopup('Waukena Lake').addTo(map);
-  //var id_troylookout = L.marker([-31.354262, -36.562656]).bindPopup("Troy's Lookout").addTo(map);
-  //var id_marshbunker = L.marker([-28.15119, -27.422269]).bindPopup('Marsh Bunker').addTo(map);
-  //var id_legionroadblock = L.marker([-72.599632, -2.988919]).bindPopup('Legion Roadblock').addTo(map);
-  //var id_serrataairstrip = L.marker([61.185801, 31.289081]).bindPopup('Serrata Airstrip').addTo(map);
-  //var id_proposalrock = L.marker([24.22234, -62.751452]).bindPopup('Proposal Rock').addTo(map);
-  //var id_roadsideraidercamp = L.marker([70.988175, -48.779345]).bindPopup('Roadside Raider Camp').addTo(map);
-  //var id_sdgencampment = L.marker([13.934438, 3.514809]).bindPopup('SDG Encampment').addTo(map);
-  //var id_vaulteightysix = L.marker([22.184825, -30.585048]).bindPopup('Vault 86').addTo(map);
-  //var id_ruinedlodge = L.marker([-56.606817, -7.295062]).bindPopup('Ruined Lodge').addTo(map);
-  //var id_grasshoppervalley = L.marker([-48.635698, -0.439632]).bindPopup('Grasshopper Valley').addTo(map);
-  //var id_gafactory = L.marker([-47.576867, 3.867075]).bindPopup('General Atomics Factory').addTo(map);
-  //var id_elkhornhotsprings = L.marker([-39.02221, -4.218376]).bindPopup('Elkhorn Hot Springs').addTo(map);
-  //var id_pricecreekcamp = L.marker([-29.767504, 6.767291]).bindPopup('Price Creek Camp').addTo(map);
-  //var id_mcalleyfarm = L.marker([-66.337787, -66.337787]).bindPopup('McCalley Farm').addTo(map);
-  //var id_canyoncreek = L.marker([48.394296, 100.106085]).bindPopup('Canyon Creek').addTo(map);
-  //var id_canyoncreekkilns = L.marker([41.576677, 62.403328]).bindPopup('Canyon Creek Kilns').addTo(map);
-  //var id_canyoncreekguestranch = L.marker([26.360567, 48.516971]).bindPopup('Canyon Creek Guest Ranch').addTo(map);
-  //var id_ncrrangercamp = L.marker([60.844664, -29.5313]).bindPopup('NCR Ranger Camp').addTo(map);
-  //var id_abandonedbunker = L.marker([54.675686, -40.0779]).bindPopup('Abandoned Bunker').addTo(map);
-  //var id_dividejunkyard = L.marker([60.931854, 87.187624]).bindPopup('Divide Junkyard').addTo(map);
-  //var id_robcobuilding = L.marker([77.40588, 125.594827]).bindPopup('RobCo Assembly Centre').addTo(map);
-  //var id_enclavenorthbunker = L.marker([76.897966, 92.636703]).bindPopup('Enclave North Bunker').addTo(map);
-  //var id_westtekresearchcentre = L.marker([-71.215686, 125.332031]).bindPopup('West Tek Research Centre').addTo(map);
-  //var id_westtekwarehouse = L.marker([77.235347, -1.494099]).bindPopup('West Tek Warehouse').addTo(map);
-  //var id_dillonsubway = L.marker([-75.073003, 139.218612]).bindPopup('Dillon Subway').addTo(map);
-  //var id_fishingcabin = L.marker([-59.352153, 62.225709]).bindPopup('Fishing Cabin').addTo(map);
-  //var id_towermountainpeak = L.marker([-52.000992, 58.798918]).bindPopup('Tower Mountain Peak').addTo(map);
-  //var id_browneslake = L.marker([-13.167693, 78.398194]).bindPopup('Brownes Lake').addTo(map);
-  //var id_reststop = L.marker([-6.069056, 85.605038]).bindPopup('Rest Stop').addTo(map);
-  //var id_colesloggingco = L.marker([37.567547, -4.216406]).bindPopup("Cole's Logging Co").addTo(map);
-  //var id_radioactivedumpingground = L.marker([-17.816466, 54.932232]).bindPopup('Radioactive Dumping Ground').addTo(map);
-  //var id_relaytowerone = L.marker([-24.525035, 55.546859]).bindPopup('Beaverhead Relay Tower EK-41').addTo(map);
-  //var id_relaytowertwo = L.marker([65.875024, -17.841295]).bindPopup('Beaverhead Relay Tower GV-70').addTo(map);
-  //var id_relaytowerthree = L.marker([54.572094, -68.466891]).bindPopup('Beaverhead Relay Tower RS-22').addTo(map);
-  //var id_legionscoutcamp = L.marker([-56.022932, 92.109503]).bindPopup('Legion Scout Camp').addTo(map);
-  //var id_chemistheadquarters = L.marker([-32.68473, 77.168794]).bindPopup('Chemist Headquarters').addTo(map);
-  //var id_crashedship = L.marker([-30.222269, 66.093952]).bindPopup('Crashed Ship').addTo(map);
-  //var id_mutantshack = L.marker([-64.691744, -39.372248]).bindPopup('Roadside Shack').addTo(map);
-  //var id_poseidonenergyplant = L.marker([64.811521, 92.197263]).bindPopup('Poseidon Energy Plant').addTo(map);
-  //var id_redrocketgasstation = L.marker([-78.543178, 87.714903]).bindPopup('Red Rocket Gas Station').addTo(map);
-  //var id_poseidonenergygasstation = L.marker([-78.920842, 85.78136]).bindPopup('Poseidon Energy Gas Station').addTo(map);
-  //var id_serrataoutpost = L.marker([-78.007541, 36.298725]).bindPopup('Serrata Outpost').addTo(map);
+  var id_dillprim = L.marker([-78.508103, 130.165986], {icon: Blue}).bindPopup('Dillon Primary').addTo(map);
+  //var id_dillout = L.marker([-75.995173, 134.736335], {icon: Black}).bindPopup('Dillon Outskirts').addTo(map);
+  //var id_polaris = L.marker([-57.899813, -3.512015], {icon: Red}).bindPopup('Polaris').addTo(map);
+  //var id_jackson = L.marker([-59.129405, -80.332178], {icon: Black}).bindPopup('Jackson').addTo(map);
+  var id_wisdom = L.marker([19.642906, -90.703111], {icon: Black}).bindPopup('Wisdom').addTo(map);
+  //var id_wriver = L.marker([66.336793, 41.395991], {icon: Orange}).bindPopup('Wise River').addTo(map);
+  //var id_melrose = L.marker([24.990389, 114.78511], {icon: Black}).bindPopup('Melrose').addTo(map);
+  //var id_glen = L.marker([-31.726635, 113.115232], {icon: Blue}).bindPopup('Glen').addTo(map);
+  //var id_coolidge = L.marker([-28.226201, 21.444918], {icon: Orange}).bindPopup('Coolidge').addTo(map);
+  //var id_argenta = L.marker([-73.176272, 73.300676], {icon: Purple}).bindPopup('Argenta').addTo(map);
+  var id_ncrborder = L.marker([25.144796, -118.65177], {icon: Green}).bindPopup('NCR Border Outpost').addTo(map);
+  //var id_ncroutpost = L.marker([-20.639737, -93.867261], {icon: Green}).bindPopup('NCR Outpost').addTo(map);
+  //var id_vaultthirtythree = L.marker([3.600777, 90.527321], {icon: Black}).bindPopup('Vault 33').addTo(map);
+  //var id_waukenalake = L.marker([-3.16032, 42.188761], {icon: Orange}).bindPopup('Waukena Lake').addTo(map);
+  //var id_troylookout = L.marker([-31.354262, -36.562656], {icon: Black}).bindPopup("Troy's Lookout").addTo(map);
+  //var id_marshbunker = L.marker([-28.15119, -27.422269], {icon: Grey}).bindPopup('Marsh Bunker').addTo(map);
+  //var id_legionroadblock = L.marker([-72.599632, -2.988919], {icon: Red}).bindPopup('Legion Roadblock').addTo(map);
+  //var id_serrataairstrip = L.marker([61.185801, 31.289081], {icon: Orange}).bindPopup('Serrata Airstrip').addTo(map);
+  //var id_proposalrock = L.marker([24.22234, -62.751452], {icon: Black}).bindPopup('Proposal Rock').addTo(map);
+  //var id_roadsideraidercamp = L.marker([70.988175, -48.779345], {icon: Black}).bindPopup('Roadside Raider Camp').addTo(map);
+  //var id_superdwellerencampment = L.marker([13.934438, 3.514809], {icon: Purple}).bindPopup('Super Dweller Encampment').addTo(map);
+  //var id_vaulteightysix = L.marker([22.184825, -30.585048], {icon: Purple}).bindPopup('Vault 86').addTo(map);
+  //var id_ruinedlodge = L.marker([-56.606817, -7.295062], {icon: Black}).bindPopup('Ruined Lodge').addTo(map);
+  //var id_grasshoppervalley = L.marker([-48.635698, -0.439632], {icon: Black}).bindPopup('Grasshopper Valley').addTo(map);
+  //var id_gafactory = L.marker([-47.576867, 3.867075], {icon: Black}).bindPopup('General Atomics Factory').addTo(map);
+  //var id_elkhornhotsprings = L.marker([-39.02221, -4.218376], {icon: Black}).bindPopup('Elkhorn Hot Springs').addTo(map);
+  //var id_pricecreekcamp = L.marker([-29.767504, 6.767291], {icon: Black}).bindPopup('Price Creek Camp').addTo(map);
+  //var id_mcalleyfarm = L.marker([-66.337787, -66.337787], {icon: Red}).bindPopup('McCalley Farm').addTo(map);
+  //var id_canyoncreek = L.marker([48.394296, 100.106085], {icon: Black}).bindPopup('Canyon Creek').addTo(map);
+  //var id_canyoncreekkilns = L.marker([41.576677, 62.403328], {icon: Black}).bindPopup('Canyon Creek Kilns').addTo(map);
+  //var id_canyoncreekguestranch = L.marker([26.360567, 48.516971], {icon: Black}).bindPopup('Canyon Creek Guest Ranch').addTo(map);
+  //var id_ncrrangercamp = L.marker([60.844664, -29.5313], {icon: Green}).bindPopup('NCR Ranger Camp').addTo(map);
+  //var id_abandonedbunker = L.marker([54.675686, -40.0779], {icon: Black}).bindPopup('Abandoned Bunker').addTo(map);
+  //var id_dividejunkyard = L.marker([60.931854, 87.187624], {icon: Gold}).bindPopup('Divide Junkyard').addTo(map);
+  //var id_robcobuilding = L.marker([77.40588, 125.594827], {icon: Black}).bindPopup('RobCo Assembly Centre').addTo(map);
+  //var id_enclavenorthbunker = L.marker([76.897966, 92.636703], {icon: Black}).bindPopup('Enclave North Bunker').addTo(map);
+  //var id_westtekresearchcentre = L.marker([-71.215686, 125.332031], {icon: Black}).bindPopup('West Tek Research Centre').addTo(map);
+  //var id_westtekwarehouse = L.marker([77.235347, -1.494099], {icon: Black}).bindPopup('West Tek Warehouse').addTo(map);
+  //var id_dillonsubway = L.marker([-75.073003, 139.218612], {icon: Black}).bindPopup('Dillon Subway').addTo(map);
+  //var id_fishingcabin = L.marker([-59.352153, 62.225709], {icon: Black}).bindPopup('Fishing Cabin').addTo(map);
+  //var id_towermountainpeak = L.marker([-52.000992, 58.798918], {icon: Black}).bindPopup('Tower Mountain Peak').addTo(map);
+  //var id_browneslake = L.marker([-13.167693, 78.398194], {icon: Orange}).bindPopup('Brownes Lake').addTo(map);
+  //var id_reststop = L.marker([-6.069056, 85.605038], {icon: Black}).bindPopup('Rest Stop').addTo(map);
+  //var id_colesloggingco = L.marker([37.567547, -4.216406], {icon: Black}).bindPopup("Cole's Logging Co").addTo(map);
+  //var id_radioactivedumpingground = L.marker([-17.816466, 54.932232], {icon: Black}).bindPopup('Radioactive Dumping Ground').addTo(map);
+  //var id_relaytowerone = L.marker([-24.525035, 55.546859], {icon: Grey}).bindPopup('Beaverhead Relay Tower EK-41').addTo(map);
+  //var id_relaytowertwo = L.marker([65.875024, -17.841295], {icon: Orange}).bindPopup('Beaverhead Relay Tower GV-70').addTo(map);
+  //var id_relaytowerthree = L.marker([54.572094, -68.466891], {icon: Black}).bindPopup('Beaverhead Relay Tower RS-22').addTo(map);
+  //var id_legionscoutcamp = L.marker([-56.022932, 92.109503], {icon: Red}).bindPopup('Legion Scout Camp').addTo(map);
+  //var id_chemisthq = L.marker([-32.68473, 77.168794], {icon: Black}).bindPopup('Chemist Camp').addTo(map);
+  //var id_crashedship = L.marker([-30.222269, 66.093952], {icon: Black}).bindPopup('Crashed Ship').addTo(map);
+  //var id_mutantshack = L.marker([-64.691744, -39.372248], {icon: Purple}).bindPopup('Roadside Shack').addTo(map);
+  //var id_poseidonenergyplant = L.marker([64.811521, 92.197263], {icon: Black}).bindPopup('Poseidon Energy Plant').addTo(map);
+  //var id_redrocketgasstation = L.marker([-78.543178, 87.714903], {icon: Black}).bindPopup('Red Rocket Gas Station').addTo(map);
+  //var id_poseidonenergygasstation = L.marker([-78.920842, 85.78136], {icon: Black}).bindPopup('Poseidon Energy Gas Station').addTo(map);
+  //var id_serrataoutpost = L.marker([-78.007541, 36.298725], {icon: Orange}).bindPopup('Serrata Outpost').addTo(map);
+  //var id_brewhousebrewery = L.marker([24.608118, -90.615172], {icon: Black}).bindPopup('Brewhouse Brewery').addTo(map);
+  //var id_pulowskiheadquarters = L.marker([-74.137953, 121.288732], {icon: Black}).bindPopup('Pulowski Preservation Services HQ').addTo(map);
+  //var id_vaultfifty = L.marker([0.000000, 0.000000], {icon: Black}).bindPopup('Vault 50').addTo(map);
     </script>
   </body>
 </html>
